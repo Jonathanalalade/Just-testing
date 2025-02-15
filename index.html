@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimatorAgent - The Agent Who Animates Your Ideas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path class="logo-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor"/>
+                </svg>
+                <span>AnimatorAgent</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Support</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Learn</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="sign-in">Sign in</a>
+            <a href="#" class="sign-up">Sign up</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-background">
+            <div class="particles-container"></div>
+        </div>
+        <div class="gradient-heart"></div>
+        
+        <div class="announcement">
+            <span class="new-badge">New:</span>
+            Experience AI-powered design suggestions in real-time!
+        </div>
+
+        <h1 class="main-title">Idea to design in seconds.</h1>
+        <p class="subtitle">Your AI design partner that transforms concepts into stunning visuals instantly.</p>
+
+        <div class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    placeholder="Describe your design idea..." 
+                    class="design-input"
+                    id="designInput"
+                ></textarea>
+            </div>
+            <div class="input-actions">
+                <div class="import-buttons">
+                    <button class="action-btn figma-import">
+                        <svg width="16" height="16" viewBox="0 0 38 57" fill="none">
+                            <path d="M19 28.5C19 25.9804 20.0009 23.5641 21.7825 21.7825C23.5641 20.0009 25.9804 19 28.5 19C31.0196 19 33.4359 20.0009 35.2175 21.7825C36.9991 23.5641 38 25.9804 38 28.5C38 31.0196 36.9991 33.4359 35.2175 35.2175C33.4359 36.9991 31.0196 38 28.5 38C25.9804 38 23.5641 36.9991 21.7825 35.2175C20.0009 33.4359 19 31.0196 19 28.5Z" fill="#1ABCFE"/>
+                            <path d="M0 47.5C0 44.9804 1.00089 42.5641 2.78249 40.7825C4.56408 39.0009 6.98044 38 9.5 38H19V47.5C19 50.0196 17.9991 52.4359 16.2175 54.2175C14.4359 55.9991 12.0196 57 9.5 57C6.98044 57 4.56408 55.9991 2.78249 54.2175C1.00089 52.4359 0 50.0196 0 47.5Z" fill="#0ACF83"/>
+                            <path d="M19 0V19H28.5C31.0196 19 33.4359 17.9991 35.2175 16.2175C36.9991 14.4359 38 12.0196 38 9.5C38 6.98044 36.9991 4.56408 35.2175 2.78249C33.4359 1.00089 31.0196 0 28.5 0H19Z" fill="#FF7262"/>
+                            <path d="M0 9.5C0 12.0196 1.00089 14.4359 2.78249 16.2175C4.56408 17.9991 6.98044 19 9.5 19H19V0H9.5C6.98044 0 4.56408 1.00089 2.78249 2.78249C1.00089 4.56408 0 6.98044 0 9.5Z" fill="#F24E1E"/>
+                            <path d="M0 28.5C0 31.0196 1.00089 33.4359 2.78249 35.2175C4.56408 36.9991 6.98044 38 9.5 38H19V19H9.5C6.98044 19 4.56408 20.0009 2.78249 21.7825C1.00089 23.5641 0 25.9804 0 28.5Z" fill="#A259FF"/>
+                        </svg>
+                        <span>Import from Figma</span>
+                    </button>
+                    <button class="action-btn upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <span>Upload Reference</span>
+                    </button>
+                </div>
+                <button class="primary-btn">
+                    Generate Design
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14"/>
+                        <path d="M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <button class="tag-btn">Website Design ↑</button>
+            <button class="tag-btn">Brand Identity ↑</button>
+            <button class="tag-btn">Social Media Kit ↑</button>
+            <button class="tag-btn">UI Components ↑</button>
+        </div>
+
+        <div class="social-proof">
+            <div class="testimonial">
+                "From concept to design in seconds, not hours."
+            </div>
+            <div class="users">
+                <span>Join thousands of designers accelerating their workflow</span>
+                <div class="rating">
+                    <span>★★★★★</span>
+                    4.9 / 5.0
+                    <span class="reviews">150 reviews</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="features">
+        <h2>Design at the speed of thought</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Smart Design</h3>
+                <p>AI-powered design suggestions that learn your style and brand preferences, delivering personalized results every time.</p>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Collaborative</h3>
+                <p>Share, iterate, and collaborate with your team in real-time. Perfect for remote teams and instant feedback.</p>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Real-time Iterations</h3>
+                <p>Instant design variations and adjustments with AI assistance. See changes come to life as you type.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <h2>How it works</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Describe Your Vision</h3>
+                <p>Share your design idea in simple words or upload reference images</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>AI Generation</h3>
+                <p>Our AI instantly creates multiple design options based on your input</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Collaborate & Refine</h3>
+                <p>Iterate in real-time with your team and refine the designs</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo">
+        <div class="demo-container">
+            <div class="demo-animation"></div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is AnimatorAgent?</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    AnimatorAgent is an AI-powered design platform that helps you transform your ideas into stunning visuals instantly. Whether you need website designs, brand identities, or UI components, our AI understands your requirements and generates professional designs in seconds.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does it work?</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    Simply describe your design needs in natural language or upload reference images. Our AI analyzes your input and generates multiple design options. You can then iterate and refine the designs in real-time until you achieve your desired result.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I collaborate with my team?</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    Yes! AnimatorAgent is built for collaboration. Share your designs with team members, collect feedback, and make iterations in real-time. Perfect for remote teams and quick design iterations.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What types of designs can I create?</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    You can create a wide range of designs including website layouts, brand identities, social media kits, UI components, marketing materials, and more. Our AI adapts to your specific design needs and brand guidelines.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Hire a Partner</a></li>
+                    <li><a href="#">Become a Partner</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Builder Hall of Fame</a></li>
+                    <li><a href="#">Learn</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Launched</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Report Abuse</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Discord">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AnimatorAgent. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Logo animation
+        anime({
+            targets: '.logo-path',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 1500,
+            delay: 300
+        });
+
+        // Gradient heart animation
+        anime({
+            targets: '.gradient-heart',
+            scale: [0.9, 1],
+            opacity: [0.5, 1],
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: true,
+            duration: 1500
+        });
+
+        // Title animation
+        anime.timeline()
+            .add({
+                targets: '.main-title',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                easing: 'easeOutExpo',
+                duration: 1000
+            })
+            .add({
+                targets: '.subtitle',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                easing: 'easeOutExpo',
+                duration: 1000,
+                offset: '-=800'
+            });
+
+        // Feature cards animation
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const featureObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    anime({
+                        targets: entry.target,
+                        translateY: [100, 0],
+                        opacity: [0, 1],
+                        duration: 1200,
+                        easing: 'easeOutCubic',
+                        delay: entry.target.dataset.delay || 0
+                    });
+                    featureObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Set initial state of feature cards
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(100px)';
+            card.dataset.delay = index * 200;
+            featureObserver.observe(card);
+        });
+
+        // Create particles
+        const particlesContainer = document.querySelector('.particles-container');
+        const numberOfParticles = 20;
+        
+        for (let i = 0; i < numberOfParticles; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particlesContainer.appendChild(particle);
+            
+            // Random size between 10 and 100
+            const size = anime.random(10, 100);
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Initial position
+            const x = anime.random(0, window.innerWidth);
+            const y = anime.random(0, window.innerHeight);
+            
+            anime({
+                targets: particle,
+                translateX: [
+                    {
+                        value: x,
+                        duration: 0
+                    },
+                    {
+                        value: `+=${anime.random(-200, 200)}`,
+                        duration: anime.random(3000, 5000)
+                    }
+                ],
+                translateY: [
+                    {
+                        value: y,
+                        duration: 0
+                    },
+                    {
+                        value: `+=${anime.random(-200, 200)}`,
+                        duration: anime.random(3000, 5000)
+                    }
+                ],
+                scale: [
+                    {
+                        value: anime.random(0.2, 1.5),
+                        duration: anime.random(2000, 4000),
+                        easing: 'easeInOutSine'
+                    }
+                ],
+                opacity: [
+                    {
+                        value: [0, 0.1],
+                        duration: 1000,
+                        easing: 'easeInOutSine'
+                    },
+                    {
+                        value: 0,
+                        duration: 1000,
+                        delay: 3000,
+                        easing: 'easeInOutSine'
+                    }
+                ],
+                loop: true,
+                delay: anime.random(0, 2000)
+            });
+        }
+
+        // Add wave effect
+        const wave = document.createElement('div');
+        wave.className = 'wave';
+        document.querySelector('.hero-background').appendChild(wave);
+
+        anime({
+            targets: '.wave',
+            d: [
+                { value: [
+                    'M0 50 C20 40 40 60 60 50 C80 40 100 60 120 50 C140 40 160 60 180 50 C200 40 220 60 240 50 V100 H0 Z',
+                    'M0 50 C20 60 40 40 60 50 C80 60 100 40 120 50 C140 60 160 40 180 50 C200 60 220 40 240 50 V100 H0 Z'
+                ] }
+            ],
+            easing: 'easeInOutSine',
+            duration: 5000,
+            loop: true,
+            direction: 'alternate'
+        });
+
+        // Add floating gradient orbs
+        const createOrb = () => {
+            const orb = document.createElement('div');
+            orb.className = 'gradient-orb';
+            document.querySelector('.hero-background').appendChild(orb);
+            
+            anime({
+                targets: orb,
+                translateX: () => anime.random(-200, window.innerWidth + 200),
+                translateY: () => anime.random(-200, window.innerHeight + 200),
+                scale: [0.2, 1.5],
+                opacity: {
+                    value: [0, 0.15],
+                    easing: 'linear'
+                },
+                duration: () => anime.random(5000, 8000),
+                easing: 'easeInOutQuad',
+                complete: () => {
+                    orb.remove();
+                    createOrb();
+                }
+            });
+        };
+
+        // Create multiple orbs
+        for (let i = 0; i < 5; i++) {
+            createOrb();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('designInput');
+            
+            // Replace the typing animation code with this simplified version
+            const createTypingAnimation = () => {
+                const suggestions = [
+                    "Create a modern SaaS landing page...",
+                    "Design a minimal logo for a tech startup...",
+                    "Generate a mobile app dashboard...",
+                    "Create a social media post template..."
+                ];
+                let currentSuggestion = 0;
+                let currentChar = 0;
+                let isDeleting = false;
+                let isWaiting = false;
+
+                const type = () => {
+                    const currentText = suggestions[currentSuggestion];
+                    
+                    if (isDeleting) {
+                        input.value = currentText.substring(0, currentChar - 1);
+                        currentChar--;
+                    } else {
+                        input.value = currentText.substring(0, currentChar + 1);
+                        currentChar++;
+                    }
+
+                    if (!isDeleting && currentChar === currentText.length) {
+                        isWaiting = true;
+                        setTimeout(() => {
+                            isDeleting = true;
+                            isWaiting = false;
+                        }, 2000);
+                    } else if (isDeleting && currentChar === 0) {
+                        isDeleting = false;
+                        currentSuggestion = (currentSuggestion + 1) % suggestions.length;
+                    }
+
+                    const typingSpeed = isDeleting ? 30 : 70;
+                    const delay = isWaiting ? 0 : typingSpeed;
+
+                    setTimeout(type, delay);
+                };
+
+                type();
+            };
+
+            // Update cursor animation
+            const createCursor = () => {
+                const cursorSpan = document.createElement('span');
+                cursorSpan.className = 'input-cursor';
+                cursorSpan.textContent = '|';
+                document.querySelector('.input-wrapper').appendChild(cursorSpan);
+
+                anime({
+                    targets: '.input-cursor',
+                    opacity: [0.7, 0],
+                    duration: 600,
+                    easing: 'steps(2)',
+                    loop: true
+                });
+            };
+
+            // Initialize animations
+            createCursor();
+            createTypingAnimation();
+
+            // Update cursor position
+            input.addEventListener('input', () => {
+                const cursorPosition = input.value.length;
+                document.querySelector('.input-cursor').style.transform = 
+                    `translateX(calc(${cursorPosition} * 0.875ch))`;
+            });
+
+            // Figma import button animation
+            document.querySelector('.figma-import').addEventListener('mouseenter', () => {
+                anime({
+                    targets: '.figma-import svg',
+                    rotate: '360deg',
+                    duration: 800,
+                    easing: 'easeInOutSine'
+                });
+            });
+        });
+
+        // FAQ Interactions
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle clicked item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
